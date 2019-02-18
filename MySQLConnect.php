@@ -2,7 +2,7 @@
 	namespace Connect
 	require_once("iConnectData.php");
 	
-	class MySqlDB implements iConnectData{
+	class MySQLConnect implements iConnectData{
 		public $error_code = 0;
 		public $error_message = '';
 		public $sql_result = array();
