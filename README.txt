@@ -1,0 +1,1 @@
+README.TXT file for MySQLConnect class.
