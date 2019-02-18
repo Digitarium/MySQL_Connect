@@ -1,5 +1,5 @@
 <?php
-	namespace Connect
+	namespace Connect;
 	require_once("iConnectData.php");
 	
 	class MySQLConnect implements iConnectData{
@@ -35,18 +35,14 @@
 			}
 			try{
 				$this->MySqlConnect = new mysqli($this->host, $this->user, $this->password, $this->db, $this->port);
-				if ($this->MySqlConnect->connect_errno){
+				if ($this->MySqlConnect->connect_errno)
 					throw new Exception($this->MySqlConnect->connect_error, $this->MySqlConnect->connect_errno);
-				}
-				if (!$this->MySqlConnect->set_charset("utf8")) {
+				if (!$this->MySqlConnect->set_charset("utf8"))
 					throw new Exception("Не выполнена загрузка набора символов UTF-8", 8);
-				}
-				return true;
 			}
 			catch (Exception $e){
 				$this->error_code = $e->getCode();
 				$this->error_message = $e->getMessage();
-				return false;
 			}
 		}
 			
